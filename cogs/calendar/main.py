@@ -22,7 +22,7 @@ class Calendar(commands.Cog):
         hour = date.datetime.today().hour
         minute = date.datetime.today().minute
 
-        if time(hour, minute) == time(22, 25):
+        if time(hour, minute) == time(0, 0):
             day = date.datetime.today().day
             month = date.datetime.today().month
             name_of_day = date.datetime.today().strftime('%A')

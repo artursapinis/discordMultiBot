@@ -244,7 +244,7 @@ class ChannelDropdown(discord.ui.Select):
         c.close()
 
         await interaction.response.edit_message(
-            content=f'🔧 Tu veiksmīgi uzstādīji **{configType}** uz {mention} ', view=None, embed=None)
+            content=f'🔧 Tu veiksmīgi uzstādīji {configType} uz {mention} ', view=None, embed=None)
 
 
 class ChannelView(discord.ui.View):

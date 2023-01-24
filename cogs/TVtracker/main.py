@@ -39,7 +39,7 @@ class Tracker(commands.Cog):
         hour = date.datetime.today().hour
         minute = date.datetime.today().minute
 
-        if time(hour, minute) == time(12, 39):
+        if time(hour, minute) == time(0, 0):
             for server in self.bot.guilds:
                 c = self.con.cursor()
                 c.execute(f"SELECT * FROM guilds WHERE guild_id=?", (server.id,))
@@ -125,7 +125,8 @@ class Tracker(commands.Cog):
         admin = False
 
         if resp[2] == 'None':
-            return await ctx.respond(':warning: Sākumā pievieno seriālu paziņojumu kanālu! (**/konfiguracija**)')
+            return await ctx.respond(':warning: Sākumā pievieno seriālu paziņojumu kanālu! (**/konfiguracija**)',
+                                     ephemeral=True)
 
         if resp[5] != 'None':
             roleSetup = True
